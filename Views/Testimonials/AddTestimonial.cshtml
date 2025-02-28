@@ -1,0 +1,21 @@
+﻿@model BooklyProject.Entities.Testimonial
+
+@{
+    ViewBag.Title = "AddTestimonial";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Yeni Referans Ekle</h3>
+
+<form method="post">
+    <label>İsim Soyisim</label>
+    <input type="text" name="Name" class="form-control" required />
+    <br />
+    <label>Yorum </label>
+    <input type="text" name="Comment" class="form-control" required />
+    <br />
+    <label>Review </label>
+    <input type="text" name="Review" class="form-control" required />
+    <br />
+    <button class="btn btn-outline-dark"> <i class="fa fa-save"></i>Kaydet</button>
+</form>

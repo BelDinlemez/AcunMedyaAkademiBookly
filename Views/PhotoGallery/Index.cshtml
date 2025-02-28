@@ -1,0 +1,34 @@
+﻿@model List<BooklyProject.Entities.PhotoGallery>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+
+<h3>Fotoğraf Galerisi</h3>
+
+<table class="table table-bordered table-hover">
+
+    <tr>
+        <th>#</th>
+        <th>Görsel Url</th>
+        <th>IsShown</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td><img src="@item.ImageUrl" style="width:75px;height:75px" alt="Galeri Görseli" /></td>
+            <td>@item.IsShown</td>
+            <td><a href="/PhotoGallery/DeletePhoto/@item.PhotoGalleryId" class="btn btn-outline-danger"><i class="fa fa-trash"></i> Sil</a></td>
+            <td><a href="/PhotoGallery/UpdatePhoto/@item.PhotoGalleryId" class="btn btn-outline-info"><i class="fa fa-pen"></i>Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<td><a href="/PhotoGallery/AddPhoto/" class="btn btn-outline-dark">Yeni Görsel Ekle</a>   </td>

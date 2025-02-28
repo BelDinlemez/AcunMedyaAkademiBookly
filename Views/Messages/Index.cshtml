@@ -1,0 +1,34 @@
+﻿@model List<BooklyProject.Entities.Message>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Mesajlar</h3>
+
+<table class="table table-bordered table-hover">
+   
+    <tr>
+        <th>#</th>
+        <th>İsim</th>
+        <th>Mail</th>
+        <th>Konu</th>
+        <th>Mesaj İçeriği</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Subject</td>
+            <td>@item.MessageContent</td>
+            <td><a href="/Messages/DeleteMessage/@item.MessageId" class="btn btn-outline-danger"><i class="fa fa-trash"></i> Sil</a></td>
+        </tr>
+    }
+
+</table>

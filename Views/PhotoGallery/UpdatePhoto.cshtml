@@ -1,0 +1,19 @@
+﻿@model BooklyProject.Entities.PhotoGallery
+@{
+    ViewBag.Title = "UpdatePhoto";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Fotoğraf Güncelle</h3>
+
+<form method="post">
+    <input type="hidden" name="PhotoGalleryId" value="@Model.PhotoGalleryId" />
+    <label>Görsel url</label>
+    <input type="text" value="@Model.ImageUrl" name="ImageUrl" class="form-control" required />
+    <br />
+    <label>IsShown </label>
+    <input type="text" value="@Model.IsShown" name="IsShown" class="form-control" required />
+    <br />
+
+    <button class="btn btn-outline-dark"> <i class="fa fa-save"></i>Kaydet</button>
+</form>

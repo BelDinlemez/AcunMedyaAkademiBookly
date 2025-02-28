@@ -1,0 +1,17 @@
+﻿@model BooklyProject.Entities.BookCategory
+@{
+    ViewBag.Title = "AddBookCategory";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h3>Yeni Kitap ve Kategori Bağdaştır</h3>
+
+<form method="post">
+    <label>Kitap Id</label>
+    <input type="text" name="BookId" class="form-control" required />
+    <br />
+    <label>Kategori Id</label>
+    <input type="text" name="CategoryId" class="form-control" required />
+    <br />
+    <button class="btn btn-outline-dark"> <i class="fa fa-save"></i>Kaydet</button>
+</form>

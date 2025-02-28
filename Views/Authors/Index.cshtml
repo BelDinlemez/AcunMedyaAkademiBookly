@@ -1,0 +1,43 @@
+﻿@model List<BooklyProject.Entities.Author>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<h3>Yazarlar</h3>
+
+<form method="get">
+    <div class="form-group">
+        <input type="text" name="searchText" placeholder="Kelime Ara" />
+        <button class="btn btn-dark btn-sm">Ara </button>
+    </div>
+</form>
+
+<table class="table table-bordered table-hover">
+
+    <div>
+    <tr>
+        <th>#</th>
+        <th>İsim</th>
+        <th>Soyisim</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>@item.Surname</td>
+            <td><a href="/Authors/DeleteAuthor/@item.AuthorId" class="btn btn-outline-danger"><i class="fa fa-trash"></i> Sil</a></td>
+            <td><a href="/Authors/UpdateAuthor/@item.AuthorId" class="btn btn-outline-info"><i class="fa fa-pen"></i>Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+<td><a href="/Authors/AddAuthor/" class="btn btn-outline-dark">Yeni Yazar Ekle</a>   </td>
+
