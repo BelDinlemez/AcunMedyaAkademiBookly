@@ -20,7 +20,7 @@
 
 <h2>🤍Bookly Uygulama Detayları</h2>
 
-<<h3>★ Banner</h3>
+<h3>★ Banner</h3>
 <img src="https://raw.githubusercontent.com/BelDinlemez/AcunMedyaAkademiBookly/main/BooklySS/BooklyBanner.png" alt="Banner Görseli" />
 
 <h3>★ Kitaplar</h3>
